@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Basic style kit */
+body {
+  @apply bg-zinc-900 h-full overflow-x-hidden ;
+    /* Apply the background in the page */
+}
+
+
+/* apply :full represents the full height of the page */
+#__next{
+  @apply h-full;
+}
+
+html {
+  @apply h-full;
+  @apply text-white
+}
+
+@layer components {
+    .bannerButton {
+        @apply flex items-center gap-x-2 rounded px-5 py-1.5 text-sm font-semibold transition hover:opacity-75 md:py-2.5 md:px-8 md:text-xl;
+    }
+
+    .modalButton {
+        @apply flex h-11 w-11 items-center justify-center rounded-full border-2 border-[gray] bg-[#2a2a2a]/60 transition hover:border-white hover:bg-white/10 ;
+    }
+}
+
+
+/* Scrollbar style */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2a2a2a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cf7604;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF9000;
+}
+/* Scrollbar style end */
+
+.billy{
+height: 100vh;
+}
+
