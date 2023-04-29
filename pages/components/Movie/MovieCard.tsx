@@ -20,10 +20,10 @@ function MovieCard({movie}:Props) {
                  }}>
                 <Image
                     src={`https://image.tmdb.org/t/p/w500${
-                        movie.backdrop_path || movie.poster_path
+                        movie?.backdrop_path || movie?.poster_path
                     }`}
-                    className="rounded-sm object-cover md:rounded"
-                    layout="fill" alt={movie.title}
+                    className="rounded-sm object-cover md:rounded fill"
+                    width={1980} height={10} alt={movie?.title}
                 />
             </div>
         );

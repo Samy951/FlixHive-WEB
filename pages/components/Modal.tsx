@@ -4,11 +4,10 @@ import {useRecoilState} from "recoil";
 import {modalState, movieState} from "@/atoms/modalAtom";
 import {IoClose} from "react-icons/io5";
 import {useEffect, useState} from "react";
-import {Genre, Movie} from "@/typings";
-import {Element} from "@/typings";
+import {Genre, Element} from "@/typings";
 import ReactPlayer from "react-player";
-import {FaCheck, FaPlay, FaPlus, FaThumbsUp, FaVolumeOff, FaVolumeUp} from "react-icons/fa";
-import Grid from "@mui/material/Grid";
+import {FaPlay, FaThumbsUp, FaVolumeOff, FaVolumeUp} from "react-icons/fa";
+
 import Typography from "@mui/material/Typography";
 
 function Modal  () {
@@ -16,7 +15,6 @@ function Modal  () {
     const [showModal, setShowModal] = useRecoilState(modalState)
     const [movie,setMovie] = useRecoilState (movieState)
     const[trailer, setTrailer]= useState("")
-    const [data, setData]= useState()
     const [genres, setGenres]= useState<Genre[]>([])
     const [muted, setMuted] = useState(true)
     useEffect(() => {
@@ -38,7 +36,7 @@ function Modal  () {
             }
         }
 
-        fetchMovie()
+        fetchMovie().then(r => r )
     }, [movie])
 
     const handleClose = () => {
@@ -91,7 +89,7 @@ function Modal  () {
                     <div className="space-y-6 text-lg">
                         <div className="flex items-center space-x-2 text-sm">
                             <p className="font-semibold text-amber-500">
-                                {movie!.vote_average * 10}% Match
+                                {movie?.vote_average * 10}% Match
                             </p>
                             <p className="font-light">
                                 {movie?.release_date || movie?.first_air_date}

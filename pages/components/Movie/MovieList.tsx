@@ -31,7 +31,7 @@ function MovieList ({title, movies}: Props) {
                 <FaChevronLeft className={`absolute top-0 bottom-0 left-2 z-40 m-auto h-9 w-9 cursor-pointer opacity-0 transition hover:scale-125 group-hover:opacity-100 ${!isMoved && 'hidden'}`} onClick={()=> handleClick("left")}/>
 
                 <div ref={MovieListRef} className={"flex items-center space-x-0.5 overflow-x-scroll md:space-x-2.5 md: p-2 scrollbar-hide"}>
-                    {movies.map((movie) => (<MovieCard key={movie.id} movie={movie}/>
+                    {movies?.map((movie) => (<MovieCard key={movie?.id} movie={movie}/>
                     ))}
                 </div>
 

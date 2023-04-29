@@ -2,9 +2,9 @@ import NavbarItem from "./NavbarItem"
 import MobileMenu from "./MobileMenu"
 import { useState, useCallback, useEffect } from "react";
 import { BsChevronDown } from "react-icons/bs";
-import { AiOutlineSearch } from "react-icons/ai";
-import { AiOutlineBell } from "react-icons/ai";
+import { AiOutlineSearch,AiOutlineBell  } from "react-icons/ai";
 import AccountMenu from "./AccountMenu";
+import Image from "next/image";
 
 const TOP_OFFSET = 66;
 
@@ -53,7 +53,7 @@ const Navbar = () => {
             ${showBackground ? 'bg-zinc-900 bg-opacity-90' : ' '}`}>
 
                 
-                <img src="/images/logo.svg" alt="logo" className="h-4 lg:h-7"/>
+                <Image src="/images/logo.svg" width={100} height={100} alt={''} className="h-4 lg:h-7"/>
                 <div className="
                 flex-row
                 ml-8
@@ -84,7 +84,7 @@ const Navbar = () => {
 
                     <div onClick={toggleAccountMenu} className="flex flex-row items-center gap-2 cursor-pointer relative">
                         <div className="w-6 h-6 lg;w-10 lg:h-10 rounded-md overflow-hidden">
-                            <img src="/images/default-user.png" alt="avatar" className=""/>
+                            <Image src={"/images/default-user.png"} width={100} height={100} alt={'User'} className=""/>
                         </div>
                         <BsChevronDown className={`w-4 text-white fill-white transition ${showAccountMenu ? 'rotate-180' : 'rotate-0'}`} />
                         <AccountMenu visible={showAccountMenu} />
